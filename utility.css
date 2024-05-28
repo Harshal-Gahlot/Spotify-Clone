@@ -1,0 +1,26 @@
+.df {
+    display: flex;
+}
+.dfc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.p10 {
+    padding: 10px;
+}
+.m10 {
+    margin: 10px;
+}
+
+.hc :hover {
+    background-color: #252525;
+    border-radius: 100%;
+}
+.hr :hover {
+    background-color: #252525;
+    border-radius: 500px;
+}
+.rotate180 {
+    transform: rotate(180deg) !important;
+}

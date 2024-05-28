@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid red; */    
+}
+
+button {
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+svg {
+    fill: #b3b3b3;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: rgb(0, 0, 0);
+    user-select: none;
+}
+
+/* Left side aside */
+
+aside {
+    width: 360px;
+    min-width: 260px;
+    max-width: 999px;
+    height: calc(100% - 21px);
+    position: relative;
+    margin-left: 7px ;
+}
+
+/* Top left home box */
+
+.top-left {
+    margin-top: 7px;
+    width: 100%;
+    height: 100px;
+    background-color: #181818;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home, .search {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.home *, .search * {
+    padding: 10px;
+    color: #b3b3b3;
+}
+
+.home:focus *, .search:focus *, .home:hover *, .search:hover *  {
+    fill: #fff !important;
+    color: #fff !important;
+}
+
+/* Library in left */
+
+.library {
+    margin: 7px 0;
+    width: 100%;
+    height: calc(100% - 100px);
+    border-radius: 10px;
+    background-color: #181818;
+    /* background-color: rgb(255, 140, 0); */
+}
+
+/* Your library line */
+
+.library .title , .library .title .left :first-child, .library .title .right {
+    display: flex;
+    flex-direction: row;
+}
+
+.library .title {
+    color: #b3b3b3;
+    position: relative;
+    justify-content: space-between;
+}
+
+.library .title {
+    padding: 10px 10px;
+}
+
+.library .title .left button svg {
+    padding: 10px;   
+}
+
+.library .title .right  > * {
+    position: relative;
+    margin-right: 4px;
+    right: -10px;
+    padding: 10px 12px;
+}
+
+.library .title .left button {
+    font-size: small;
+    display: flex;
+    align-items: center;
+}
+
+.library .title .right button {
+    width: 40%;
+    height: 80%;
+}
+
+.lib-collapse:hover {
+    color: #fff ;
+    transition: 200ms linear ;
+}
+
+.lib-collapse:hover svg {
+    fill: #fff !important ;
+    transition: 200ms linear ;
+}
+
+/* Left Library*/
+
+/* Tags */
+.tags ul {
+    display: flex ;
+    color: #fff;
+    list-style: none;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+li button {
+    margin: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    background-color: #ffffff12;
+    border-radius: 100px;
+}
+
+li button:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* search and recents */
+
+.search-in-lib {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    color : #b3b3b3;
+}
+
+.hidden-more{
+    position: absolute;
+    right: 0px;
+    padding: 4px 10px 10px 50px;
+    background: linear-gradient(to right, #00000000 0%, #181818ff 55%);
+}
+.hidden-more svg {
+    background-color: #ffffff22;
+}
+
+.search-left, .hidden-more {
+    display: flex;
+    align-items: center;
+}
+
+.search-left .search-icon, .hidden-more svg {
+    padding: 5px 5px 5px 6px;
+    border-radius: 9999px;
+}
+
+.search-left :hover, .hidden-more :hover {
+    background-color: #434343;
+    fill: #fff !important;
+}
+
+.search-right :last-child {
+    padding-left: 5px;
+}
+
+.search-right {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.search-in-lib > :hover {
+    color: #fff;
+    transform: scale(104%);    
+}
+
+.search-in-lib > :hover svg{
+    fill: #fff !important;
+}
+
+.sep div{
+    display: flex;
+    width: 7px;
+    height: 100%;
+    cursor:grab;
+}
+
+.sep :hover .line{
+    height: 94%;
+    margin: auto;
+    width: 1px;
+    background-color: #8a8a8a;
+}
+
+main {
+    margin: 7px 7px 7px 0px;
+    background-color: #181818;
+    border-radius: 10px;
+    flex-grow: 1;
+    /* background-color: chartreuse; */
+}
+
+.current {
+    position: fixed;
+    bottom: 0;
+    background-color: #000000;
+    height: 80px;
+    width: 100%;
+}
