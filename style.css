@@ -26,7 +26,7 @@ body {
 /* Left side aside */
 
 aside {
-    width: 360px;
+    width: 320px;
     min-width: 260px;
     max-width: 999px;
     height: calc(100% - 21px);
@@ -163,6 +163,7 @@ li button:hover {
     padding: 4px 10px 10px 50px;
     background: linear-gradient(to right, #00000000 0%, #181818ff 55%);
 }
+
 .hidden-more svg {
     background-color: #ffffff22;
 }
@@ -199,6 +200,48 @@ li button:hover {
 
 .search-in-lib > :hover svg{
     fill: #fff !important;
+}
+
+/* Wide Lib Cards */
+
+.wide-lib-card-container{
+    overflow-y: scroll;
+    scrollbar-color: #333333 #00000000;
+    max-height: 73%;
+    scrollbar-width: auto;
+}
+
+.wide-lib-card {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    border-radius: 0.3em;
+    height: 50px;
+}
+
+.wide-lib-card:hover {
+    background-color: #212121;
+}
+
+.wide-lib-card img {
+    margin: 5px;
+    width: 40px;
+    height: auto;
+    border-radius: 10%;
+}
+.card-inner-text {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-title{
+    color: #fff;
+    font-size: 14px
+}
+.card-bottom{
+    color: rgb(149, 149, 149);
+    font-size: 12px;
 }
 
 .sep div{
