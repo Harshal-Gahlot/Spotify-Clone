@@ -258,18 +258,93 @@ li button:hover {
     background-color: #8a8a8a;
 }
 
-main {
-    margin: 7px 7px 7px 0px;
-    background-color: #181818;
-    border-radius: 10px;
-    flex-grow: 1;
-    /* background-color: chartreuse; */
-}
-
 .current {
     position: fixed;
     bottom: 0;
     background-color: #000000;
     height: 80px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cur-info {
+    background-color: yellowgreen;
+    width: 28%;
+}
+
+.player {
+    /* background-color: yellow; */
+    width: 42%;
+    display: grid;
+    place-content: center;
+    gap: 10px;
+}
+
+.upper-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.upper-btns button svg {
+    fill: #b3b3b3;
+}
+.upper-btns .white-on-hover:hover{
+    fill: #fff;
+}
+
+#play-btn {
+    background-color: #fff;
+    padding: 8px;
+    display: grid;
+    margin-block-start: -4px;
+    place-content: center;
+    border-radius: 100%;
+}
+
+#play-btn:hover {
+    outline: 1px solid #fff;  
+}
+
+#play-btn svg {
+    fill: black;
+}
+
+.song-length-display{
+    display: flex;
+    color: #9f9f9f;
+    align-items: center;
+    gap: 10px;
+}
+
+.timelines {
+    position: relative;
+}
+
+.time {
+    font-size: 12px;
+}
+
+#timeline-bg {
+    width: 32.5vw;
+    height: 4px;
+    background-color: #4f4f4f;
+}
+
+#timeline-over {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 4px;
+    width: 69.69%;
+}
+
+
+.controles {
+    background-color: violet;
+    width: 28%;
 }

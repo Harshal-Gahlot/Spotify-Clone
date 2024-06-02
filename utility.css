@@ -24,3 +24,6 @@
 .rotate180 {
     transform: rotate(180deg) !important;
 }
+.white-on-hover {
+    fill: #fff;
+}

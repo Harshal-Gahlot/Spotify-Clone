@@ -1,0 +1,59 @@
+main {
+    margin: 7px 7px 7px 0px;
+    background-color: #181818;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.main-top{
+    display: flex;
+    /* background-color: yellow; */
+    margin: 20px;
+    position: relative;
+}
+
+.main-top .left button {
+    padding: 0.5em;
+    border-radius: 100%;
+    background-color: rgb(35, 35, 35);
+}
+
+.main-top .right {
+    color: #fff;
+    position: absolute;
+    right: 0px;
+    display: flex;
+    gap: 10px;
+}
+
+.premium-btn{
+    background-color:azure;
+    color: #000;
+    padding: 6px 15px;
+    border-radius: 100px;
+    font-weight: 700;
+}
+
+.install-btn {
+    background-color: #000;
+    color: azure;
+    padding: 6px 15px;
+    display: flex;
+    gap: 6px;
+    font-weight: 700;
+    border-radius: 100px;
+}
+
+.user-btn {
+    background-color:#000;
+    border-radius: 100%;
+    /* padding: 20px; */
+    padding: 8px 4px;
+}
+
+.user-btn strong {
+    color: #000;
+    padding: 5px 7px;
+    border-radius: 10em;
+    background-color: rgb(0, 255, 89);
+}

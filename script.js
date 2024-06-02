@@ -64,6 +64,7 @@ expandLib.addEventListener('click', switchLibWidth);
 tagBtn.forEach((tag) => {
     tag.addEventListener('click', tagsSlideLeft)
 })
+
 addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
 addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
 addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
