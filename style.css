@@ -343,8 +343,36 @@ li button:hover {
     width: 69.69%;
 }
 
-
-.controles {
-    background-color: violet;
+.bottom-right-controles {
     width: 28%;
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    margin-right: 12px;
+    margin-bottom: 5px;
+}
+
+.bottom-right-controles > *{
+    padding: 2px 8px ;
+}
+
+.soundlines {
+    position: relative;
+    /* margin-bottom: 2px; */
+}
+
+#soundline-bg {
+    width: 7vw;
+    height: 4px;
+    background-color: #4f4f4f;
+}
+
+#soundline-over {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 4px;
+    width: 100%;
 }
