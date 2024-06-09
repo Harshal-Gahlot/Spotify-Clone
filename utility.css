@@ -1,6 +1,12 @@
-.df {
-    display: flex;
+@font-face {
+    font-family: mainFont;
+    src: url(https://encore.scdn.co/fonts/CircularSp-Arab-Book-8c0cff2514cf52ffcc4976fa813c4712.woff2);
 }
+
+* {
+    font-family: mainFont;
+}
+
 .dfc {
     display: flex;
     align-items: center;
@@ -24,6 +30,44 @@
 .rotate180 {
     transform: rotate(180deg) !important;
 }
-.white-on-hover {
+.white-on-hover:hover svg {
     fill: #fff;
+}
+.en:hover {
+    height: 105%;
+    width: 105%;
+}
+
+.lines {
+    position: relative;
+}
+
+.line-bg {
+    height: 4px;
+    background-color: #4f4f4f;
+}
+
+.line-above {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 4px;
+}
+.lines:hover .line-above, .lines:active .line-above{
+    background-color: #0f0;
+}
+.lines:hover .line-above .cur-value-circle, .lines:active .line-above .cur-value-circle, .cur-value-circle:active{
+    display: block;
+}
+.cur-value-circle {
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border-radius: 100%;
+    position: absolute;
+    right: -7px;
+    top: -4px;
+    display:none;
 }

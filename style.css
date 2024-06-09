@@ -237,12 +237,15 @@ li button:hover {
 }
 .card-title{
     color: #fff;
-    font-size: 14px
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 .card-bottom{
     color: rgb(149, 149, 149);
     font-size: 12px;
 }
+
+/* Aside and main divided */
 
 .sep div{
     display: flex;
@@ -258,6 +261,8 @@ li button:hover {
     background-color: #8a8a8a;
 }
 
+/* Fixed bottom current music play controls */
+
 .current {
     position: fixed;
     bottom: 0;
@@ -265,12 +270,17 @@ li button:hover {
     height: 80px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .cur-info {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     width: 28%;
+    display: flex;
+}
+
+.cur-info > * {
+    margin: auto 5px;
 }
 
 .player {
@@ -319,28 +329,20 @@ li button:hover {
     gap: 10px;
 }
 
-.timelines {
-    position: relative;
-}
-
 .time {
     font-size: 12px;
 }
 
 #timeline-bg {
     width: 32.5vw;
-    height: 4px;
-    background-color: #4f4f4f;
 }
 
-#timeline-over {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #fff;
-    border-radius: 10px;
-    height: 4px;
+#timeline-above{
     width: 69.69%;
+}
+
+#timeine-above .cur-value-circle {
+    padding-bottom: 100px;
 }
 
 .bottom-right-controles {
@@ -348,31 +350,17 @@ li button:hover {
     display: flex;
     justify-content:right;
     align-items: center;
-    margin-right: 12px;
     margin-bottom: 5px;
 }
 
-.bottom-right-controles > *{
+.bottom-right-controles > * {
     padding: 2px 8px ;
 }
 
-.soundlines {
-    position: relative;
-    /* margin-bottom: 2px; */
-}
-
 #soundline-bg {
-    width: 7vw;
-    height: 4px;
-    background-color: #4f4f4f;
+    width: 6vw;
 }
 
-#soundline-over {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #fff;
-    border-radius: 10px;
-    height: 4px;
+#soundline-above {
     width: 100%;
 }
