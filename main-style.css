@@ -9,7 +9,7 @@ main {
 .main-sticky {
     position: sticky;
     top: 0;
-}
+} 
 
 @keyframes main-sticky-anime {
     from {
@@ -131,36 +131,41 @@ main {
     color: #fff;
     margin: 20px;
 }
+    
+.a-type-of-playlist h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    max-width: fit-content;
+}
+    
+.a-type-of-playlist h3:hover {
+    text-decoration: underline;
+}
 
 .music-playlist-container {
     display: grid;
-    grid-gap: var(--grid-gap);
     grid-auto-rows: -webkit-min-content;
     grid-auto-rows: min-content;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap:20px;
 }
 
-.a-type-of-playlist h3 {
-    font-size: 20px;
-    margin: 10px 0;
-    max-width: fit-content;
-}
-
-.a-type-of-playlist h3:hover {
-    text-decoration: underline;
-}
-
 .sq-playlist-card{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .sq-playlist-card img {
     height:100%;
     width:100%;
+    padding: 10px;
+} 
+
+.sq-playlist-card:hover {
+    background-color: #3f3f3f;
 }
 
-.sq-playlist-card strong {
-    /* margin: 10px 0 0 0; */
+.sq-playlist-card p {
+    min-height: 3.5rem;
 }
