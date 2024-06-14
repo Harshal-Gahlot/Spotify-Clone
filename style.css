@@ -26,12 +26,9 @@ body {
 
 aside {
     width: 320px;
-    min-width: 260px;
+    min-width: 280px;
     max-width: 999px;
     height: calc(100% - 21px);
-}
-    
-.aside {
     margin-top: 7px;
     position: relative;
     margin-left: 7px ;
@@ -53,17 +50,18 @@ aside {
 .home, .search {
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin: 0 14px;
+    padding-left: 10px;
 }
 
 .home *, .search * {
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
     color: #b3b3b3;
 }
 
 .home:focus *, .search:focus *, .home:hover *, .search:hover *  {
-    fill: #fff !important;
-    color: #fff !important;
+    fill: #fff ;
+    color: #fff ;
 }
 
 /* Library in left */
@@ -87,14 +85,15 @@ aside {
     color: #b3b3b3;
     position: relative;
     justify-content: space-between;
-}
-
-.library .title {
-    padding: 10px 10px;
+    padding: 10px;
 }
 
 .library .title .left button svg {
     padding: 10px;   
+}
+
+.library .title .left {
+    margin-left: 4px;
 }
 
 .library .title .right  > * {
@@ -115,6 +114,12 @@ aside {
     height: 80%;
 }
 
+.lib-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .lib-collapse:hover {
     color: #fff ;
     transition: 200ms linear ;
@@ -128,7 +133,7 @@ aside {
 /* Left Library*/
 
 /* Tags */
-.tags ul {
+.tags {
     display: flex ;
     color: #fff;
     list-style: none;
@@ -207,17 +212,21 @@ li button:hover {
 
 .wide-lib-card-container{
     overflow-y: scroll;
+    scrollbar-color: #33333300 #00000000;
+    max-height:72%;
+    position: relative;
+    scrollbar-width: thin;
+    display: grid;
+    gap: 10px;
+}
+.wide-lib-card-container:hover {
     scrollbar-color: #333333 #00000000;
-    max-height: 73%;
-    scrollbar-width: auto;
 }
 
 .wide-lib-card {
     display: flex;
-    width: 95%;
-    margin: auto;
-    border-radius: 0.3em;
-    height: 50px;
+    border-radius: 0.4em;
+    height: 9vh;
 }
 
 .wide-lib-card:hover {
@@ -225,10 +234,8 @@ li button:hover {
 }
 
 .wide-lib-card img {
-    margin: 5px;
-    width: 40px;
-    height: auto;
-    border-radius: 10%;
+    margin-left: 10px;
+    border-radius: 8px;
 }
 .card-inner-text {
     margin-left: 5px;
@@ -261,16 +268,6 @@ li button:hover {
     width: 1px;
     background-color: #8a8a8a;
 }
-
-/* left Side Sub Aside */
-
-/* .collapsed-aside {
-    display: none;
-    width: 5vw;
-    background-color: #181818;
-    border-radius: 10px;
-    height: calc(100% - 14px);
-} */
 
 /* Fixed bottom current music play controls */
 

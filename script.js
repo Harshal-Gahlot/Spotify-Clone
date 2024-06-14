@@ -11,27 +11,73 @@ function moveSep(e) {
     wid = parseInt(wid, 10);
     document.addEventListener('mousemove', resize);
     document.addEventListener('mouseup', removeSepEvents);
-} 
+}
 function resize(e) {
     let dx = e.clientX - x_pos;
     let w = wid + dx;
 
     if (w < window.innerWidth * 0.1) {
-        var collapsedSide = true 
-        if (not (collapsedSide)) { getCollapse() }
+        if (globalThis.collapsedSide == false) { getCollapse() }
+        
+    } else {
+        if (w < (window.innerWidth * 0.3)) {
+            if (w < window.innerWidth * 0.28) {
+                showtags.style.display = 'block'; 
+            } else { showtags.style.display = "none"; }
+            
+            aside.style.width = `${w}px`;
+            expandLib.firstElementChild.classList.remove("rotate180");
+        }
+        else if ((window.innerWidth * 0.427) < w) {
+            expandLib.firstElementChild.classList.add("rotate180"); 
+            aside.style.width = `${w}px`;
+        }
+        if (globalThis.collapsedSide == true) { getUncollapse() };
     }
-    else if (w < (window.innerWidth * 0.3))  {
-        if (w < window.innerWidth * 0.3 ) { showtags.style.display = 'block'; }
-        else{ showtags.style.display = "none"; }
-        aside.style.width = `${w}px`;
-        expandLib.firstElementChild.classList.remove("rotate180");
-        if (collapsedSide) { getUncollapse() }
-
-    } else if ((window.innerWidth * 0.427) < w) {
-        aside.style.width = `${w}px`;
-        expandLib.firstElementChild.classList.add("rotate180"); 
-        if (collapsedSide) { getUncollapse() }}
 }
+function getCollapse(e) {
+    globalThis.collapsedSide = true 
+    for (let i = 0; i < 2; i++) {
+        aside.children[0].children[i].children[1].style.display = 'none';
+        aside.children[0].style.width = 'fit-content'; 
+    }
+    aside.children[1].children[0].children[0].children[0].children[1].style.display = 'none';
+    aside.children[1].children[0].children[1].style.display = 'none';
+    aside.children[1].children[1].style.display = 'none';
+    aside.children[1].children[2].children[0].style.display = 'none';
+    aside.children[1].children[0].style.display = 'gird';
+    aside.children[1].children[0].style.placeContent = 'center';
+    for (let i = 1; i < aside.children[1].children[2].childElementCount; i++){
+        aside.children[1].children[2].children[i].children[1].style.display = 'none'; }
+
+    aside.children[1].style.width = 'fit-content';
+    aside.style.width = 'fit-content';
+    aside.style.minWidth = '0';
+    aside.querySelector('.left').style.marginLeft = '0px';
+    aside.querySelector('.wide-lib-card-container').style.maxHeight = '82%';
+}
+
+function getUncollapse(e) {
+    globalThis.collapsedSide = false
+    for (let i = 0; i < 2; i++) {
+        aside.children[0].style.width = '100%';
+        aside.children[0].children[i].children[1].style.display = 'block';
+    }
+    aside.children[1].children[0].children[0].children[0].children[1].style.display = 'block';
+    aside.children[1].children[0].children[1].style.display = 'flex';
+    aside.children[1].children[1].style.display = 'flex';
+    aside.children[1].children[2].children[0].style.display = 'flex';
+    aside.children[1].children[0].style.display = 'flex';
+    aside.children[1].children[0].style.placeContent = 'space-between';
+    for (let i = 1; i < aside.children[1].children[2].childElementCount; i++){
+        aside.children[1].children[2].children[i].children[1].style.display = 'block'; }
+    aside.children[1].style.width = 'auto';
+    aside.style.width = 'auto';
+    aside.style.minWidth = '280px';
+    aside.querySelector('.left').style.marginLeft = '4px';
+    aside.querySelector('.wide-lib-card-container').style.maxHeight = '72%';
+}
+
 function removeSepEvents(e) {
     document.removeEventListener('mousemove', resize);
     document.removeEventListener('mouseup', removeSepEvents);
@@ -55,6 +101,7 @@ function switchLibWidth(e) {
     if (parseFloat(aside.style.width) <= (window.innerWidth * 0.4)) {
         aside.style.width = `${window.innerWidth * 0.428}px`;
         expandLib.firstElementChild.classList.add("rotate180");
+        showtags.style.display = "none";
     }
     else {
         aside.style.width = `${window.innerWidth * 0.3}px`;
@@ -69,7 +116,7 @@ function addLibWideCard(imgSource, cardTitle, bottomPart) {
     card.className = 'wide-lib-card'
     card.innerHTML = `
 <img src="${imgSource}">
-<div class='lib-card-text-show-hide'>
+<div>
     <div class="card-inner-text">
         <h4 class="card-title">${cardTitle}</h4>
         <div class="card-bottom">${bottomPart}</div>
@@ -81,7 +128,6 @@ function addLibWideCard(imgSource, cardTitle, bottomPart) {
 const home = document.querySelector(".home");
 const sep = document.querySelector('.sep');
 const aside = document.querySelector('aside');
-const collapsedAside = document.querySelector('.collapsed-aside')
 const showtags = document.querySelector('.hidden-more');
 const expandLib = document.getElementById('expandLib');
 const tagBtn = document.querySelectorAll('.tag-btn');
@@ -96,13 +142,13 @@ tagBtn.forEach((tag) => {
     tag.addEventListener('click', tagsSlideLeft);
 })
 
-addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
-addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
-addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
-addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
-addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
-addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
-addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
-addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
+collapsedSide = false
 
-var collapsedSide = false
+addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
+addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
+addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
+addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
+addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
+addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
+addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
+addLibWideCard('assets/zebra.jfif', 'Like Songs', 'Album · All But 6')
